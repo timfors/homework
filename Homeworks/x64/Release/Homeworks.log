@@ -1,0 +1,7 @@
+﻿  2.cpp
+  1.cpp
+C:\Users\timfo\source\repos\Homeworks\Homeworks\1.cpp(13,14): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\timfo\source\repos\Homeworks\Homeworks\1.cpp(16,30): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\timfo\source\repos\Homeworks\Homeworks\1.cpp(21,26): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+2.obj : error LNK2005: main уже определен в 2.obj
+C:\Users\timfo\source\repos\Homeworks\x64\Release\Homeworks.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более

@@ -1,0 +1,2 @@
+﻿1.obj : error LNK2005: main уже определен в 2.obj
+C:\Users\timfo\source\repos\Homeworks\x64\Debug\Homeworks.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более
