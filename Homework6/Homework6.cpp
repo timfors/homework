@@ -16,42 +16,45 @@ int main()
 	int** arrA = new int*[n];
 	 
 	for (int i = 0; i < n; i++) {
-		cout << "Enter row " << i + 1 << ":" <<  endl;
-		int* row = new int[m];
+		cout << "Enter line " << i + 1 << ":" <<  endl;
+		int* line = new int[m];
 		for (int j = 0; j < m; j++) {
-			cin >> row[j];
+			cin >> line[j];
 		}
-		arrA[i] = row;
+		arrA[i] = line;
 	}
 
-	vector<int> firstRow;
+	int* posMemory = new int[m];
+
+	int* firstLine = arrA[0];
+
 	for (int i = 0; i < m; i++)
-		firstRow.push_back(arrA[0][i]);
+		posMemory[i] = 0;
 		
-	
+	int line = 1, row;
 
-	
-	for (int i = 1; i < n; i++) {
-		int a = 0;
-		int j = 0;
-		while (j < m && a < firstRow.size()) {
-			if (firstRow.at(a) == arrA[i][j]) 
-			a++;
-			else if (firstRow[a] < arrA[i][j]) {
-				firstRow.erase(firstRow.begin() + a);
-				j--;
-			}
-			j++;
+	while (line < n && posMemory[0] < m - 1) {
+		row = posMemory[line];
+
+		if (arrA[line][row] < firstLine[posMemory[0]]) {
+			posMemory[line]++;
+		}
+		else if (arrA[line][row] > firstLine[posMemory[0]]) {
+			posMemory[0]++;
+			line = 1;
+		}
+		else {
+			posMemory[line]++;
+			line++;
 		}
 	}
 	
-
-	cout << firstRow[0];
-	 
-	for (int i = 0; i < n; i++) 
-		delete arrA[i];
+	cout << firstLine[posMemory[0]];
 	
-	delete arrA;
+	 
+	delete[] arrA;
+	delete[] firstLine;
+	delete[] posMemory;
 
 }
 
